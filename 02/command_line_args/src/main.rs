@@ -16,8 +16,11 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
 }
 
 fn main() {
+    // Ainda sendo um vetor, é necessário marca-lo como mutável!
+    // Por padrão é um Vec<u64>.
     let mut numbers = Vec::new();
 
+    // Um loop genérico, que pula o primeiro elemento do array de args(). 
     for arg in env::args().skip(1) {
         numbers.push(u64::from_str(&arg).expect("Could not parse number from argument"));
     }
